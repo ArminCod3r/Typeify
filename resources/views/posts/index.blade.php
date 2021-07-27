@@ -12,7 +12,10 @@
 
 				<div class="col-md-10 posts-area">
 					<h3>
-						<a href="/posts/{{$post->id}}"> {{ $post->title }} </a>
+						<a href="/posts/{{$post->id}}">
+							<i class="nav-icon fa fa-edit"></i>
+							{{ $post->title }}
+						</a>
 					</h3>
 
 
