@@ -48,6 +48,14 @@
 	          <li class="nav-item">
 	            <a class="nav-link active" aria-current="page" href="/about">About</a>
 	          </li>
+
+	          <li class="nav-item">
+	            <a class="nav-link active" aria-current="page" href="/posts">Posts</a>
+	          </li>
+
+	          <li class="nav-item">
+	            <a class="nav-link active" aria-current="page" href="/posts/create">Create-Post</a>
+	          </li>
 	          
 
 	        </ul>
