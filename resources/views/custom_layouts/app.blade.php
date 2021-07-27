@@ -21,6 +21,8 @@
 
 		<title>{{ config('app.name', 'Typeify') }}</title>
 
+		<link rel="stylesheet" href="{{ url('css/custom-style.css') }}">
+
 		@yield('in-page-style')
 
 		<!-- Fixed navbar -->
