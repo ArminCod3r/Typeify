@@ -1,4 +1,4 @@
-@extends('custom_layouts.app')
+@extends('layouts.app')
 
 
 @section('in-page-style')
