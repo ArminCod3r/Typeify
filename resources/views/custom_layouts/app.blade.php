@@ -21,6 +21,8 @@
 
 		<title>{{ config('app.name', 'Typeify') }}</title>
 
+		@yield('in-page-style')
+
 		<!-- Fixed navbar -->
 	    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
 
@@ -61,7 +63,7 @@
 	</head>
 
 	<body>
-		<div style="margin: 10%">
+		<div style="margin: 5%">
 			@yield('content')
 		</div>
 	</body>
