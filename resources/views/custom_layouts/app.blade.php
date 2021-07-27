@@ -66,4 +66,6 @@
 	<!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
 
+    @yield('in-page-js')
+
 </html>
