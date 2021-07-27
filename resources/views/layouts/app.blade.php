@@ -24,6 +24,8 @@
 
     <link rel="stylesheet" type="text/css" href="{{ url('/css/custom-style.css') }}" />
 
+    <title>{{ config('app.name', 'Typeify') }}</title>
+
 </head>
 <body>
 
@@ -96,9 +98,14 @@
   </div>
 </nav>
 
-    <main class="py-4">
+    <main class="py-4" style="margin: 5%">
         @yield('content')
     </main>
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}"></script>
+
+    @yield('in-page-js')
 
 </body>
 </html>
