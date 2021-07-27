@@ -31,7 +31,11 @@
 						</div>
 
 						<div class="col-md-1">
-							<Button class="btn btn-danger"> Delete </Button>
+							<form action="{{route('posts.destroy', $post->id ) }}" method="POST" accept-charset="utf-8" class="pull-right">
+								{{ csrf_field() }}		
+								<input type="hidden" name="_method" value="DELETE">
+								<input type="submit" name="submit" value="DELETE" class="btn btn-danger">
+							</form>
 						</div>
 						
 					</div>
