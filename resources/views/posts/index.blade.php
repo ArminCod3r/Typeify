@@ -27,7 +27,7 @@
 						</div>
 
 						<div class="col-md-1">
-							<Button class="btn btn-primary"> Edit </Button>
+							<a href="/posts/{{ $post->id }}/edit" class="btn btn-primary">Edit</a>
 						</div>
 
 						<div class="col-md-1">
