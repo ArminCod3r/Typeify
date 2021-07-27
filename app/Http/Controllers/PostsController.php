@@ -85,7 +85,19 @@ class PostsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // Validate the sent request
+        $this->validate($request,  ['title' => 'required|max:255',
+                                    'body'  => 'required', ]);
+
+        
+        // Edit a post
+        $post = Post::find($id);
+        $post->title = $request->input('title');
+        $post->body  = $request->input('body');
+        $post->Save();
+
+
+        return redirect('/posts');
     }
 
     /**
