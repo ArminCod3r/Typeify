@@ -8,6 +8,6 @@ class Comment extends Model
 {    
     protected $table      = 'comments';
     public    $primaryKey = 'id';
-    protected $fillable   = [ 'id', 'user_id', 'body', 'created_at','updated_at' ];
+    protected $fillable   = [ 'id', 'user_id', 'body', 'approved', 'created_at','updated_at' ];
     public    $timestamps = true;
 }

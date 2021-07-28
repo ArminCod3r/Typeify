@@ -43,6 +43,7 @@ class CommentController extends Controller
         $new_comment          = new Comment();
         $new_comment->user_id = Auth::user()->id;
         $new_comment->body    = $request->input('body');
+        $new_comment->approved= 0; // BTW: the default value is '0' 
         
         if($new_comment->Save())
             return "Saved";
