@@ -26,6 +26,8 @@
 
     <title>{{ config('app.name', 'Typeify') }}</title>
 
+    @yield('in-page-style')
+
 </head>
 <body>
 
