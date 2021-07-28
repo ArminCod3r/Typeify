@@ -44,10 +44,6 @@
 
 @section('in-page-js')
 <script>
-submit_comment = function()
-{
-	console.log("hello");
-}
 
 //27346205
 $('#comment').on('submit', function(e) {
