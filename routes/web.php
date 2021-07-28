@@ -23,3 +23,9 @@ Route::resource('posts', 'PostsController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('admin', ['middleware' => 'check_admin', 'uses' => 'admin\AdminController@index']);
+
+Route::get('admin_login','admin\AdminController@admin_login');
+
