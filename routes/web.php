@@ -29,3 +29,4 @@ Route::get('admin', ['middleware' => 'check_admin', 'uses' => 'admin\AdminContro
 
 Route::get('admin_login','admin\AdminController@admin_login');
 
+Route::resource('comment', 'CommentController');

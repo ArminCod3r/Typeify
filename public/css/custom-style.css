@@ -36,3 +36,9 @@
 	margin       : 10px;
 	padding-left : 20px;
 }
+
+.comment_store_status
+{
+	margin  : 10px 0px 10px 0px;
+	font-weight : bold;
+}
