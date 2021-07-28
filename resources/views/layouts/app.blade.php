@@ -42,16 +42,22 @@
     <ul class="nav navbar-nav">
 
       <li class="active"><a href="/">Home</a></li>
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="/about">
-            Posts 
-            <span class="caret"></span>
-        </a>
-        <ul class="dropdown-menu">
-          <li><a href="/posts">List</a></li>
-          <li><a href="/posts/create">Create</a></li>
-        </ul>
-      </li>
+
+      @auth
+          @if (Auth::user()->role == 'admin')
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="/about">
+                Posts 
+                <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="/posts">List</a></li>
+              <li><a href="/posts/create">Create</a></li>
+            </ul>
+          </li>
+          @endif
+      @endauth
+
       <li><a href="/about">About</a></li>
 
     </ul>
