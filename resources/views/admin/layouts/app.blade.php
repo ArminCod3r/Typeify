@@ -25,6 +25,10 @@
   <link rel="stylesheet" href="{{url('plugins/daterangepicker/daterangepicker.css')}}">
   <!-- summernote -->
   <link rel="stylesheet" href="{{url('plugins/summernote/summernote-bs4.min.css')}}">
+
+
+  <link rel="stylesheet" href="{{ url('css/custom-style.css') }}">
+
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -132,30 +136,15 @@
               </p>
             </a>
           </li>
-          <!-- Layout Options -->
+
+          <!-- Comments Options -->
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="/admin/comment" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Comments
-                <i class="fas fa-angle-left right"></i>
-                <span class="badge badge-info right">6</span>
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Option 1</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Option 2</p>
-                </a>
-              </li>
-            </ul>
           </li>
 
           <!-- Charts Options -->

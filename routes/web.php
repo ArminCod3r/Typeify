@@ -26,6 +26,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::get('admin', ['middleware' => 'check_admin', 'uses' => 'admin\AdminController@index']);
+Route::resource('admin/comment', 'admin\CommentController');
+
 
 Route::get('admin_login','admin\AdminController@admin_login');
 

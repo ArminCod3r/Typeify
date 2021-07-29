@@ -32,7 +32,7 @@
 					
 				</div>
 
-				<input type="submit" name="submit" value="Submit" class="btn btn-primary" onclick="submit_comment()">
+				<input type="submit" name="submit" value="Submit" class="btn btn-primary">
 
 			</form>
 			</div>
