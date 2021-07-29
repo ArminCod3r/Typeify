@@ -16,7 +16,9 @@ class CommentController extends Controller
      */
     public function index()
     {
-        $comments = Comment::with('user')->orderBy('id', 'DESC')->get();
+        //return Comment::with('user')->with('post')->get();
+
+        $comments = Comment::with('user')->with('post')->orderBy('id', 'DESC')->get();
 
         return view('admin.comments.index')->with('comments',$comments);
     }

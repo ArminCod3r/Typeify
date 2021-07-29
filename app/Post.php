@@ -10,4 +10,9 @@ class Post extends Model
     public    $primaryKey = 'id';
     protected $fillable   = [ 'id', 'title', 'body', 'created_at','updated_at' ];
     public    $timestamps = true;
+
+    public function comments()
+    {
+    	return $this->hasMany(Comment::class, 'post_id', 'id');
+    }
 }

@@ -13,6 +13,7 @@
 			      <tr>
 			        <th>ID</th>
 			        <th>User</th>
+			        <th>Post</th>
 			        <th>Comment</th>
 			        <th  class="comment-col-center">Approval stat.</th>
 			        <th  class="comment-col-center">Delete</th>		        
@@ -25,6 +26,15 @@
 					<tr>
 						<td>{{$key+=1}}</td>
 				        <td>{{$comment->user[0]->name}}</td>
+				        <td>
+				        	<a href="{{ url('posts',$comment->post->id) }}">				        		
+				        		@if( strlen( strip_tags(html_entity_decode($comment->post->title)) ) > 8 )
+								{{ mb_substr($comment->post->title, 0, 8) }}...
+							@else
+							 	{{ $comment->post->title }}
+							@endif	
+				        	</a>
+				        </td>
 				        <td>{{$comment->body}}</td>
 				        <td class="comment-col-center">
 					        @if($comment->approved == 0)
