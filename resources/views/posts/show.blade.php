@@ -2,12 +2,12 @@
 
 @section('content')
 	
-	@if( count($post) > 0 )
+	@if( count($post[0]) > 0 )
 
-		<h2> {{ $post->title }} </h2>
+		<h2> {{ $post[0]->title }} </h2>
 		<hr/>
 
-		<h4> {!! $post->body !!} </h4>
+		<h4> {!! $post[0]->body !!} </h4>
 
 		<hr/>
 
@@ -39,6 +39,20 @@
 
 		</div>
 	@endif
+
+
+
+	<div style="margin-top: 20px; text-align:center">
+		<h4>Comments</h4>
+	</div>
+
+	@if( count($post[0]->comments) > 0 )		
+		@foreach($post[0]->comments as $comment)
+			<hr/>
+			<h5>{{$comment->body}}</h5>
+		@endforeach
+	@endif
+
 
 @endsection
 
