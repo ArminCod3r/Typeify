@@ -62,6 +62,9 @@
 
 function approve(comment_id) {
 
+	$("#ban_"+comment_id).removeClass("nav-icon").addClass("fas fa-circle-notch fa-spin");
+	$("#ban_"+comment_id).css("color", "black");
+
   $.ajax({
 		'type': 'get',
         'url': 'comment/approve/'+comment_id,
@@ -69,7 +72,7 @@ function approve(comment_id) {
         success: function(msg)
         {
         	console.log(comment_id);
-        	$("#ban_"+comment_id).removeClass("nav-icon").addClass("fa-check");
+        	$("#ban_"+comment_id).removeClass("fas fa-circle-notch fa-spin").addClass("nav-icon fa-check");
         	$("#ban_"+comment_id).css("color", "green");
         },
 	    error: function(XMLHttpRequest, textStatus, errorThrown) { 
