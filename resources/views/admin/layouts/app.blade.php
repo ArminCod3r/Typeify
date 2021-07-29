@@ -312,5 +312,8 @@
 
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{url('admin-panel/dist/js/pages/dashboard.js')}}"></script>
+
+@yield('in-page-js')
+
 </body>
 </html>

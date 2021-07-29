@@ -86,4 +86,17 @@ class CommentController extends Controller
     {
         //
     }
+
+    public function approve($id)
+    {
+        $comment = Comment::find($id);
+
+        $comment->approved = 1;
+        $comment->Save();
+
+        if($comment->Save())
+            return "Saved";
+        else
+            return "Failed";
+    }
 }

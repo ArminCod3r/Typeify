@@ -28,13 +28,15 @@
 				        <td>{{$comment->body}}</td>
 				        <td class="comment-col-center">
 					        @if($comment->approved == 0)
-					        	<i class="nav-icon fa fa-ban" style="color:red"></i>
+					        	<i class="nav-icon fa fa-ban" id="ban_{{$comment->id}}" style="color:red"></i>
 					        @else
-					        	<i class="fas fa-check" style="color:green"></i>
+					        	<i class="fas fa-check" id="allow_{{$comment->id}}" style="color:green"></i>
 					        @endif
 				        </td>
 				        <td class="comment-col-center">
-				        	<button class="btn btn-success">Approve</button>
+				        	<button class="btn btn-success" onclick="approve('{{$comment->id}}')">
+				        		Approve
+				        	</button>
 				        	<button class="btn btn-primary">Edit</button>
 				        	<button class="btn btn-danger">Del</button>
 				        </td>
@@ -53,3 +55,29 @@
 
 </div>
 @endsection
+
+@section('in-page-js')
+
+<script>
+
+function approve(comment_id) {
+
+  $.ajax({
+		'type': 'get',
+        'url': 'comment/approve/'+comment_id,
+        'data':'',
+        success: function(msg)
+        {
+        	console.log(comment_id);
+        	$("#ban_"+comment_id).removeClass("nav-icon").addClass("fa-check");
+        	$("#ban_"+comment_id).css("color", "green");
+        },
+	    error: function(XMLHttpRequest, textStatus, errorThrown) { 
+	    	alert("Failed");
+	    }
+    });
+
+}
+
+</script>
+@endsection()
