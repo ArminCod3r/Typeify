@@ -148,7 +148,7 @@
           </li>
 
           <!-- Charts Options -->
-          <li class="nav-item">
+          <li class="nav-item" id="post">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>
               <p>
@@ -158,13 +158,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ url('admin/post/create') }}" class="nav-link">
+                <a href="{{ url('admin/post/create#post') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Create</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ url('admin/post') }}" class="nav-link">
+                <a href="{{ url('admin/post#post') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>List</p>
                 </a>
@@ -313,6 +313,14 @@
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{url('admin-panel/dist/js/pages/dashboard.js')}}"></script>
 
+<script type="text/javascript">
+  // Keeping the selected nav-bar open
+  document.addEventListener('DOMContentLoaded', function() {
+
+        $(window.location.hash).addClass('menu-open');
+    }, false);
+  
+</script>
 @yield('in-page-js')
 
 </body>
