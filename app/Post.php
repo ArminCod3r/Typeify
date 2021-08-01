@@ -8,7 +8,7 @@ class Post extends Model
 {
     protected $table      = 'posts';
     public    $primaryKey = 'id';
-    protected $fillable   = [ 'id', 'title', 'body', 'created_at','updated_at' ];
+    protected $fillable   = [ 'id', 'title', 'body', 'cover_image','created_at','updated_at' ];
     public    $timestamps = true;
 
     public function comments()
