@@ -26,7 +26,7 @@
 		</div>
 
 		<div class="form-group">
-			<input type="file" name="cover_image" id="fileToUpload">
+			<input type="file" name="cover_image" id="fileToUpload" onclick="alert_dimensions()">
 		</div>
 
 		<input type="submit" name="submit" value="Submit" class="btn btn-primary">
@@ -40,6 +40,16 @@
 <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
 <script>
     CKEDITOR.replace( 'article-ckeditor' );
+
+    function alert_dimensions()
+    {
+	  if(!confirm("cover image should be: 200x200")) 
+	    return false;
+	  
+	  this.form.submit();
+	}
+
+
 </script>
 
 @endsection

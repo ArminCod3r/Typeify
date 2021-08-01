@@ -13,7 +13,7 @@
 				<div class="col-md-3" align="center">
 
 					<a href="/posts/{{$post->id}}">
-						<div><img src="{{ url('/img/tut.png') }}"></div>
+						<div><img src="/img/cover_images/{{$post->cover_image}}"></div>
 				    	<div align="center" style="font-size: 18px;font-weight: bold;margin-top:10px;">
 				    		
 				    		
