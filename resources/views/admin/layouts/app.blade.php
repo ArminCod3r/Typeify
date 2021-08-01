@@ -152,21 +152,21 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>
               <p>
-                Charts
+                Posts
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ url('posts/create') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Details 1</p>
+                  <p>Create</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ url('posts') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Details 2</p>
+                  <p>List</p>
                 </a>
               </li>
             </ul>
