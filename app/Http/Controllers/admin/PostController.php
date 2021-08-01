@@ -88,7 +88,25 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // Validate the sent request
+        $this->validate($request,  ['title' => 'required|max:255',
+                                    'body'  => 'required',
+                                    'cover_image' => 'image|nullable|mimes:jpeg,png,jpg|max:1999', ]);
+
+        
+        $image_name = $this->saving_img($request);
+        
+
+        // Edit a post
+        $post = Post::find($id);
+        $post->title = $request->input('title');
+        $post->body  = $request->input('body');
+        if($request->hasFile('cover_image'))
+            $post->cover_image = $image_name;
+        $post->Save();
+
+
+        return redirect('admin/post');
     }
 
     /**

@@ -3,7 +3,7 @@
 @section('main-content')
 
 	
-	<form action="#"
+	<form action="{{route('post.update', $post->id ) }}"
 	      method="POST" accept-charset="utf-8" enctype="multipart/form-data">
 		{{ csrf_field() }}
 
