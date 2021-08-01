@@ -15,7 +15,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::orderBy('created_at', 'desc')->get();
 
         return view('admin.posts.index')->with('posts',$posts);
     }
@@ -38,7 +38,21 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Validate the sent request
+        $this->validate($request,  ['title' => 'required|max:255',
+                                    'body'  => 'required',
+                                    'cover_image' => 'image|nullable|mimes:jpeg,png,jpg|max:1999', ]);
+
+        $image_name = $this->saving_img($request);
+
+        // Make a post
+        $new_post = new Post();
+        $new_post->title = $request->input('title');
+        $new_post->body  = $request->input('body');
+        $new_post->cover_image = $image_name;
+        $new_post->Save();
+
+        return redirect('admin/post');
     }
 
     /**
@@ -85,4 +99,29 @@ class PostController extends Controller
     {
         //
     }
+
+    // Saving the 'cover_image' 
+    protected function saving_img($request)
+    {
+        //Handle File Upload
+        if($request->hasFile('cover_image'))
+        {
+            $image = $request->file('cover_image');
+
+            $name = time().'.'.$image->getClientOriginalExtension();
+
+            $destinationPath = public_path('/img/cover_images');
+            
+            $image->move($destinationPath, $name);
+        }
+
+        else
+        {
+            $name = "tut.png";
+        }
+
+        return $name;
+    }
+
+
 }

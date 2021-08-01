@@ -31,6 +31,7 @@ Route::get('admin/comment/approve/{comment_id}', 'admin\CommentController@approv
 
 // admin, PostsController
 Route::get('admin/post/create', 'admin\PostController@create');
+Route::post('admin/post/store', 'admin\PostController@store' );
 Route::get('admin/post/'      , 'admin\PostController@index' );
 
 

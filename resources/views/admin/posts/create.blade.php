@@ -2,7 +2,7 @@
 
 @section('main-content')
 	
-	<form action="{{ action('PostsController@store') }}"
+	<form action="{{ action('admin\PostController@store') }}"
 	      method="POST" accept-charset="utf-8" enctype="multipart/form-data">
 		{{ csrf_field() }}
 		
