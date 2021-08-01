@@ -42,7 +42,7 @@
                 </td>
 
                 <td>
-                    <form action="{{route('posts.destroy', $post->id ) }}" method="POST" accept-charset="utf-8" class="pull-right">
+                    <form action="{{route('post.destroy', $post->id ) }}" method="POST" accept-charset="utf-8" class="pull-right">
                         {{ csrf_field() }}      
                         <input type="hidden" name="_method" value="DELETE">
                         <input type="submit" name="submit" value="DELETE" class="btn btn-danger">

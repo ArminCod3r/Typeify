@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Post;
+use File;
 
 class PostController extends Controller
 {
@@ -117,7 +118,21 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = Post::find($id);
+
+        $post->delete();
+
+        $image_path = 'img/cover_images/'.$post->cover_image;
+
+        if($post->cover_image != "tut.png")
+        {
+            if (File::exists($image_path))
+            {
+                File::delete($image_path);
+            }
+        }
+
+        return redirect('admin/post');
     }
 
     // Saving the 'cover_image' 
