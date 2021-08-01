@@ -38,7 +38,7 @@
                 </td>
 
                 <td>
-                    <a href="/posts/{{ $post->id }}/edit" class="btn btn-primary">Edit</a>
+                    <a href="post/{{ $post->id }}/edit" class="btn btn-primary">Edit</a>
                 </td>
 
                 <td>
