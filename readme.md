@@ -11,14 +11,3 @@ Typeify is a lightweight CMS and its aim is to keep things as simple as possible
 - Simple :)
 - Could be used for Laravel learner
 
-
-## Installation
-
-```
-phpmyadmin > create typeify database
-```
-
-## Plugins
-
-Dillinger is currently extended with the following plugins.
-Instructions on how to use them in your own application are linked below.
