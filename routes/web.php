@@ -29,6 +29,9 @@ Route::get('admin', ['middleware' => 'check_admin', 'uses' => 'admin\AdminContro
 Route::resource('admin/comment', 'admin\CommentController');
 Route::get('admin/comment/approve/{comment_id}', 'admin\CommentController@approve');
 
+// admin, PostsController
+Route::get('admin/post/create', 'admin\PostController@create');
+
 
 Route::get('admin_login','admin\AdminController@admin_login');
 
