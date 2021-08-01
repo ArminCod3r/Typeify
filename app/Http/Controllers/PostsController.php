@@ -51,7 +51,7 @@ class PostsController extends Controller
             $name = time().'.'.$image->getClientOriginalExtension();
 
             $destinationPath = public_path('/img/cover_images');
-            
+
             $image->move($destinationPath, $name);
         }
 
@@ -109,13 +109,33 @@ class PostsController extends Controller
     {
         // Validate the sent request
         $this->validate($request,  ['title' => 'required|max:255',
-                                    'body'  => 'required', ]);
+                                    'body'  => 'required',
+                                    'cover_image' => 'image|nullable|mimes:jpeg,png,jpg|max:1999', ]);
 
+        
+        //Handle File Upload
+        if($request->hasFile('cover_image'))
+        {
+            $image = $request->file('cover_image');
+
+            $name = time().'.'.$image->getClientOriginalExtension();
+
+            $destinationPath = public_path('/img/cover_images');
+            
+            $image->move($destinationPath, $name);
+        }
+
+        else
+        {
+            $name = "tut.png";
+        }
         
         // Edit a post
         $post = Post::find($id);
         $post->title = $request->input('title');
         $post->body  = $request->input('body');
+        if($request->hasFile('cover_image'))
+            $post->cover_image = $name;
         $post->Save();
 
 

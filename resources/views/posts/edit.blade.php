@@ -29,6 +29,10 @@
 			@enderror
 		</div>
 
+		<div style="text-align: center">
+			<img src="/img/cover_images/{{$post->cover_image}}">
+		</div>
+
 		<div class="form-group">
 			<input type="file" name="cover_image" id="fileToUpload">
 		</div>
